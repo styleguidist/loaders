@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+cache:
+  directories:
+    - $HOME/.npm
+    - $HOME/.cache/yarn
+script:
+  - yarn run test
+before_install:
+  - npm set loglevel error
+  - npm set progress false
+  - npm install -g yarn
+  - yarn --version
+install:
+  - yarn
+after_success:
+  - 'curl -Lo travis_after_all.py https://git.io/vXXtr'
+  - python travis_after_all.py
+  - export $(cat .to_export_back) &> /dev/null
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

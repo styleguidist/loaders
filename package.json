@@ -1,0 +1,61 @@
+{
+  "name": "loaders",
+  "description": "Basic Webpack loaders for JavaScript apps",
+  "homepage": "https://github.com/styleguidist/loaders",
+  "version": "0.0.0-development",
+  "author": {
+    "name": "Artem Sapegin",
+    "url": "http://sapegin.me/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/styleguidist/loaders.git"
+  },
+  "bugs": {
+    "url": "https://github.com/styleguidist/loaders/issues"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "dependencies": {
+    "babel-loader": "~6.2.8",
+    "babel-preset-react-app": "~1.0.0",
+    "css-loader": "0.25.0",
+    "file-loader": "~0.9.0",
+    "json-loader": "0.5.4",
+    "postcss-loader": "~1.1.1",
+    "style-loader": "0.13.1",
+    "url-loader": "~0.5.7"
+  },
+  "devDependencies": {
+    "jest": "~17.0.3"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "release": {
+    "analyzeCommits": "semantic-release-tamia/analyzeCommits",
+    "generateNotes": "semantic-release-tamia/generateNotes",
+    "verifyRelease": "semantic-release-tamia/verifyRelease"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "app",
+    "application",
+    "javascript",
+    "js",
+    "babel",
+    "css",
+    "json",
+    "file",
+    "url"
+  ]
+}
