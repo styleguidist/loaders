@@ -1,7 +1,7 @@
 # Basic Webpack loaders for JavaScript apps
 
-[![Build Status](https://travis-ci.org/styleguidist/webpack-loaders.svg)](https://travis-ci.org/styleguidist/webpack-loaders)
-[![npm](https://img.shields.io/npm/v/webpack-loaders.svg)](https://www.npmjs.com/package/webpack-loaders)
+[![Build Status](https://travis-ci.org/styleguidist/loaders.svg)](https://travis-ci.org/styleguidist/loaders)
+[![npm](https://img.shields.io/npm/v/loaders.svg)](https://www.npmjs.com/package/loaders)
 
 Basic Webpack loaders:
 
@@ -16,35 +16,35 @@ Based on [create-react-app](https://github.com/facebookincubator/create-react-ap
 ## Usage with [React Styleguidist](https://github.com/styleguidist/react-styleguidist)
 
 ```
-npm install --save-dev webpack-loaders
+npm install --save-dev loaders
 ```
 
 ```javascript
 // styleguide.config.js
-const loaders = require('webpack-loaders');
+const loaders = require('loaders');
 module.exports = {
-	components: 'lib/components/**/[A-Z]*.js',
-	webpackConfig: {
-		module: {
+  components: 'lib/components/**/[A-Z]*.js',
+  webpackConfig: {
+    module: {
       // Enable all loaders
-			loaders: loaders.all,
+      loaders: loaders.all,
 
       // OR only needed loaders
-			loaders: [
+      loaders: [
         loaders.babel,
         loaders.css,
         loaders.file,
         loaders.url,
         // Other loaders for your styleguide
       ],
-		},
-	},
+    },
+  },
 };
 ```
 
 ## Changelog
 
-The changelog can be found on the [Releases page](https://github.com/styleguidist/webpack-loaders/releases).
+The changelog can be found on the [Releases page](https://github.com/styleguidist/loaders/releases).
 
 ## Contributing
 
@@ -52,6 +52,6 @@ Everyone is welcome to contribute. Please take a moment to review the [contribut
 
 ## Authors and license
 
-[Artem Sapegin](http://sapegin.me) and [contributors](https://github.com/styleguidist/webpack-loaders/graphs/contributors).
+[Artem Sapegin](http://sapegin.me) and [contributors](https://github.com/styleguidist/loaders/graphs/contributors).
 
 MIT License, see the included [License.md](License.md) file.
