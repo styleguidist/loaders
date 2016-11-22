@@ -1,4 +1,5 @@
 // Based on create-react-app
+// https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/config/webpack.config.dev.js
 
 // Process JS with Babel.
 const babel = {
@@ -28,20 +29,23 @@ const json = {
 	loader: 'json-loader',
 };
 
+// Default loader: load all assets that are not handled by other loaders with the url loader.
+// Note: This list needs to be updated with every change of extensions the other loaders match.
+// E.g., when adding a loader for a new supported file extension, we need to add the supported extension to this loader too.
+// Add one new line in `exclude` for each loader.
+//
 // "file" loader makes sure those assets get served by WebpackDevServer.
 // When you `import` an asset, you get its (virtual) filename.
-const file = {
-	test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-	loader: 'file-loader',
-	query: {
-		name: 'static/media/[name].[hash:8].[ext]',
-	},
-};
-
-// "url" loader works just like "file" loader but it also embeds assets smaller than specified size as data URLs
-// to avoid requests.
+// "url" loader works like "file" loader except that it embeds assets
+// smaller than specified limit in bytes as data URLs to avoid requests.
+// A missing `test` is equivalent to a match.
 const url = {
-	test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
+	exclude: [
+		/\.html$/,
+		babel.test,
+		css.test,
+		json.test,
+	],
 	loader: 'url-loader',
 	query: {
 		limit: 10000,
@@ -53,13 +57,11 @@ module.exports = {
 	babel,
 	css,
 	json,
-	file,
 	url,
 	all: [
 		babel,
 		css,
 		json,
-		file,
 		url,
 	],
 };
