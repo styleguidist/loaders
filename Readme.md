@@ -8,8 +8,7 @@ Basic Webpack loaders:
 * `babel-loader` with [babel-preset-react-app](https://github.com/facebookincubator/create-react-app/tree/master/packages/babel-preset-react-app) preset
 * `css-loader` and `style-loader`
 * `json-loader`
-* `file-loader` for images, fonts, etc.
-* `url-loader` for other media files
+* `url-loader` for all other files
 
 Based on [create-react-app](https://github.com/facebookincubator/create-react-app) but don’t include Autoprefixer.
 
@@ -33,7 +32,6 @@ module.exports = {
       loaders: [
         loaders.babel,
         loaders.css,
-        loaders.file,
         loaders.url,
         // Other loaders for your styleguide
       ],
