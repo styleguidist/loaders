@@ -34,7 +34,7 @@
     "url-loader": "~0.5.7"
   },
   "peerDependencies": {
-    "webpack": "1 || ^2.1.0-beta"
+    "webpack": "1 || 2 || ^2.1.0-beta || ^2.2.0-rc"
   },
   "devDependencies": {
     "jest": "~17.0.3",
