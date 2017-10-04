@@ -1,7 +1,9 @@
-# Basic Webpack loaders for JavaScript apps
+# [DEPRECATED] Basic Webpack loaders for JavaScript apps
 
 [![Build Status](https://travis-ci.org/styleguidist/loaders.svg)](https://travis-ci.org/styleguidist/loaders)
 [![npm](https://img.shields.io/npm/v/loaders.svg)](https://www.npmjs.com/package/loaders)
+
+**This package is deprecated, please use [webpack-blocks](https://github.com/andywer/webpack-blocks) instead.**
 
 Basic Webpack loaders:
 
